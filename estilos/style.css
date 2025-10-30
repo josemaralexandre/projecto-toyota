@@ -1,0 +1,381 @@
+@charset "utf8";
+
+@font-face {
+    font-family: 'fundo';
+    src: url('../fonts/Audiowide-Regular.ttf');
+    format:('truetype');
+}
+
+@font-face {
+    font-family: 'carro';
+    src: url('../fonts/RobotoCondensed-VariableFont_wght.ttf');
+    format:('truetype');
+}
+
+:root{
+    --cor1: #C02B2D; 
+    --cor2: #D44551;
+    --cor3: #3E3C5A;
+
+    --font1: fundo;
+    --font2: carro;
+}
+
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+/*Configuração Gnérica*/
+
+nav{
+   display: none;     
+}
+
+nav > ul{
+    list-style-type: none;
+}
+
+nav > ul > li > a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background-color: var(--cor2);
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+    border-top: 2px solid rgba(173, 6, 6, 0.342);
+} 
+
+nav > ul > li > a:hover{
+    text-decoration: underline;
+    color: var(--cor3);
+}
+
+header{
+    height: 200px;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pesquisa{
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 50vw;
+    align-items: center;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 8px 15px;
+}
+
+.pesquisa:focus-within{
+    border-color: #3E3C5A;
+    box-shadow: 0 0 8px #3E3C5A;
+}
+
+.pesquisa #icone-pesquisa{
+    color: gray;
+    position: absolute;
+    left: 15px;
+    pointer-events: none;
+}
+
+.pesquisa input{
+    width: 250px;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+#hamburguer{
+    height: 30px;
+    background-color: var(--cor1);
+    color: var(--cor3);
+    text-align: center;
+}
+
+#burguer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+#burguer:hover{
+    background-color: var(--cor2);
+    color: white;
+    cursor: pointer;
+}
+
+#fundo{
+    
+    font-family: var(--font1);
+
+    color: var(--cor2);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.514);
+
+    background: url('../imagens/fundo3.jpg') no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+
+    background-color: #ffffff;
+    height: 100vh;
+    position: relative;
+}
+#fundo::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 98.8vw;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent,rgb(129, 129, 129));
+}
+
+main{
+    background-color: white;
+    color: black;
+    padding: 60px 20px;
+    min-height: 100vh;
+    text-align: center;
+}
+
+main > section{
+    text-align: center;
+    line-height: 10px;
+
+    font-family: var(--font2);
+}
+
+main > section > div > img{
+    width: 60vw;
+    height: 40vw;
+}
+
+main > section > div > img:hover{
+    transform: scale(1.2) translateY(-10px);
+    transition: .5s;
+}
+
+main > section > div > p{
+    margin: 10px;
+    color: black;
+
+}
+
+main > section > div > button{
+
+    font-family: var(--font2);
+
+    width: 150px;
+    height: 30px;
+    background-color: var(--cor2);
+    color: white;
+    border-radius: 5px;
+
+    position: relative;
+
+    margin-bottom: 100px;
+}
+
+main > section > div > button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: var(--cor3);
+}
+
+footer {
+  background-color: var(--cor3); 
+  color: #fff;
+  text-align: center;
+  padding: 40px 0 20px;
+  font-family: var(--font2);
+}
+
+.footer-content h3 {
+  color: var(--cor2); 
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.socials {
+  list-style: none;
+  padding: 0;
+}
+
+.socials li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.socials a {
+  color: var(--cor1); 
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 10px;
+  font-size: 13px;
+  color: #bbb;
+}
+
+/*Configuração para Tabletes*/
+@media screen and (min-width: 800px) and (max-width: 1200px){
+
+     nav{
+        display: block;
+
+    }
+    nav > ul{
+        display: flex;
+        background-color: var(--cor1);
+    }
+
+    nav > ul > li{
+        margin: auto;
+    }
+
+    nav > ul > li > a{
+        background-color: var(--cor1);
+        color: white;
+        font: 1.3em bold;
+        border-top: none;
+    }
+
+    nav > ul > li > a:hover{
+        text-decoration: none;
+        background-color: var(--cor2);
+        color:var(--cor3);
+        transition: 1s;
+    }
+
+    nav > ul > li > a#home:hover{
+        transform: rotate(90deg);
+        transition: 1s;
+    }
+    
+    header{
+        height: 200px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background: white;
+        font-family: var(--font2);
+    }
+
+    header > img{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 100px;
+        width: 200px;
+        height: 100px;
+    }
+
+    #hamburguer{
+        display: none;
+    }
+
+    main > section{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    main > section > div > img{
+        width: 30vw;
+    }
+
+}
+
+
+/*Configuração para telas*/
+@media screen and (min-width: 1200px){
+    
+    nav{
+        display: block;
+    }
+    nav > ul{
+        display: flex;
+        background-color: var(--cor1);
+    }
+
+    nav > ul > li{
+        margin: auto;
+    }
+
+    nav > ul > li > a{
+        background-color: var(--cor1);
+        border-top: none;
+    }
+
+    nav > ul > li > a:hover{
+        text-decoration: none;
+        background-color: var(--cor2);
+        color: var(--cor3);
+        transition: 1s;
+    }
+
+    nav > ul > li > a#home:hover{
+        transform: rotate(90deg);
+        transition: 1s;
+    }
+
+
+    header{
+        height: 200px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background: white;
+        font-family: var(--font2);
+    }
+
+    header > img{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: 100px;
+        width: 200px;
+        height: 100px;
+    }
+
+    #hamburguer{
+        display: none;
+    }
+
+    main > section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main > section > div > img{
+        width: 30vw;
+    }
+}
